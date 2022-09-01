@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Population Trends</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+             <nav class="navbar navbar-expand-lg navbar-dark bg-dark-about">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="index.html">Population Trends</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('blogpost') }}">Background</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About Page</a></li>
+                          <li class="nav-item"><a class="nav-link" href="{{ url_for('visuals') }}">Interactive Visuals</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('machinelearning') }}">Machine Learning</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('faq') }}">FAQ</a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Header-->
+            <header class="py-5">
+                <div class="container px-5">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 col-xxl-6">
+                            <div class="text-center my-5">
+                                <h1 class="fw-bolder mb-3">Our Collection of Visuals</h1>
+                          </div>
+                          </div>
+                      </div>
+                  </div>
+            </header>
+          
+            <!-- Visuals Section 1-heatmap-->
+            <section class="py-5 bg-light">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 align-items-center">
+                        <div ><img class ="graph-image" width = "500" height = "400" title = "fig5" src = "{{ url_for('static', filename='imgs/fig5.png') }}" style="border:1px solid green;"></div>
+
+                        <div>
+                            <h2 class="fw-bolder-space">USA Heat Map</h2>
+                            <p class="lead fw-normal text-muted mb-0">This is a heat map that demonstrates the strength of correlations between certain factors within a dataset. This is important so we know what to look for and compare with our visuals.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+          
+                  <!-- Visuals Section 2: Continents-->
+            <section class="py-5">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 align-items-center">
+                        <div class="graph"><iframe width="1400" height="500" title="Continent Population over Time" src="{{ url_for('static', filename='imgs/fig4.html') }}"></iframe>
+                          </div>
+
+                        <div>
+                            <h2 class="fw-bolder-space">Continent Population Trends</h2>
+                            <p class="lead fw-normal text-muted mb-0">This simple line graph depicts the population over time in each continent. This is important as it was one of our first visuals and was a stepping stone in helpings us understand the relationships in the data.</p>
+                          
+                        </div>
+                    </div>
+                </div>
+            </section>
+          
+          <!-- Visuals Section 3b: Continents-->
+            <section class="py-5 bg-light">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 align-items-center">
+                      
+                      <!-- Interactive Scatter Plot -->
+                      <div class="graph"><iframe 
+                          width = "800" height = "400" title = "fig57" src = "{{ url_for('vis1') }}" style="border:1px solid green;">
+                          </iframe></div>
+                      <center>
+                        <section class="py-5 bg-light" id="continent-inputs1">
+             <form method="POST">
+               <label for="col1">Choose a dependent factor:</label>
+               <br><br>
+               <select name="col1" id="col1", name="col1">
+  <option value="Population">Population</option>
+  <option value="Median Age">Median Age</option>
+  <option value="Fertility Rate">Fertility Rate</option>
+  <option value="Density (P/Km)">Density (P/Km²)</option>
+  <option value="Urban Population">Urban Population</option>
+  </select>
+
+               <br><br>
+               <label for="col1">Choose a relation factor:</label>
+               <br><br>
+               <select name="col2" id="col2", name="col2">
+  <option value="Population">Population</option>
+  <option value="Median Age">Median Age</option>
+  <option value="Fertility Rate">Fertility Rate</option>
+  <option value="Density (P/Km)">Density (P/Km²)</option>
+  <option value="Urban Population">Urban Population</option>
+  </select>
+               
+                <br><br>
+               
+               <input type="submit">
+              </form>
+              </section>
+                      </center>
+
+                        <div>
+                            <h2 class="fw-bolder-space">Interactive Continents Scatter Plot</h2>
+                            <p class="lead fw-normal text-muted mb-0">Here is a fun interactive scatter plot that allows you to change two inputs: the dependent variable and the relation (the data point size). You can change the inputs and see the different trends displayed on the scatter plot. BONUS! You can use the choropleth map below to see how female participation in the labor force affects the scatter plots!</p>
+                          
+                        </div>
+                    </div>
+                </div>
+            </section>
+          
+          <!-- Visuals Section 4b: Map-->
+            <section class="py-5">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 align-items-center">
+                      
+                      <!-- Map -->
+                     
+                      <div class="graph"><iframe width="1000" height="600" title="Women in the Labor Force" src="{{ url_for('vis2') }}"></iframe></div>
+                      <center>
+                        <section class="py-5" id="map-inputs">
+             
+             <form method="POST">
+               <label for="year1">Choose a year:</label>
+               <br><br>
+               <select name="year1" id="year1" name="year1">
+  <option value="1990">1990</option>
+  <option value="1991">1991</option>
+  <option value="1992">1992</option>
+  <option value="1993">1993</option>
+  <option value="1994">1994</option>
+  <option value="1995">1995</option>
+  <option value="1996">1996</option>
+  <option value="1997">1997</option>
+  <option value="1998">1998</option>
+  <option value="1999">1999</option>
+  <option value="2000">2000</option>
+  <option value="2001">2001</option>
+  <option value="2002">2002</option>
+  <option value="2003">2003</option>
+  <option value="2004">2004</option>
+  <option value="2005">2005</option>
+  <option value="2006">2006</option>
+  <option value="2007">2007</option>
+  <option value="2008">2008</option>
+  <option value="2009">2009</option>
+  <option value="2010">2010</option>
+  <option value="2011">2011</option>
+  <option value="2012">2012</option>
+  <option value="2013">2013</option>
+  <option value="2014">2014</option>
+  <option value="2015">2015</option>
+  <option value="2016">2016</option>
+  <option value="2017">2017</option>
+  <option value="2018">2018</option>
+  <option value="2019">2019</option>
+  <option value="2020">2020</option>
+  <option value="2021">2021</option>
+  </select>
+               
+               <br><br>
+               <input type="submit">
+              </form>
+              </section>
+                      </center>
+
+                        <div>
+                            <h2 class="fw-bolder-space">Choropleth Map</h2>
+                            <p class="lead fw-normal text-muted mb-0">Here is a visual map that shows the female labor participation rate of all the countries. Use the dropdown to see the different rates per year form 1990s to 2021. You can use this and view it side by side with the scatter plot above and see how more females working affect different population factors.</p>
+                          
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+          <!-- Visuals Section 5b: Countries Scatter Plot-->
+            <section class="py-5 bg-light">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 align-items-center">
+                      
+                      <h3>
+                        A Shift in Perspective: 25 Most Populated Countries
+                      </h3>
+                      <!-- Interactive Scatter Plot -->
+                      <!-- Placeholder -->
+                      <div class="graph"><iframe width = "800" height = "400" title = "fig1" src = "{{ url_for('vis3') }}" style="border:1px solid green;">
+                          </iframe></div>
+                      
+                            <center>
+          <section class="py-5 bg-light" id="plotinputs">
+             <form method="POST">
+               <label for="country1">Choose a country:</label>
+               <br><br>
+               <select name="country1" id="country1" name="country1">
+  <option value="bangladesh">Bangladesh</option>
+  <option value="brazil">Brazil</option>
+  <option value="china">China</option>
+  <option value="dr_congo">DR Congo</option>
+  <option value="egypt">Egypt</option>
+  <option value="ethiopia">Ethiopia</option>
+  <option value="france">France</option>
+  <option value="germany">Germany</option>
+  <option value="india">India</option>
+  <option value="indonesia">Indonesia</option>
+  <option value="iran">Iran</option>
+  <option value="italy">Italy</option>
+  <option value="japan">Japan</option>
+  <option value="mexico">Mexico</option>
+  <option value="nigeria">Nigeria</option>
+  <option value="pakistan">Pakistan</option>
+  <option value="philippines">Philippines</option>
+  <option value="russia">Russia</option>
+  <option value="south_africa">South Africa</option>
+  <option value="tanzania">Tanzania</option>
+  <option value="thailand">Thailand</option>
+  <option value="turkey">Turkey</option>
+  <option value="usa">USA</option>
+  <option value="uk">UK</option>
+  <option value="vietnam">Vietnam</option>
+  </select>
+               <br><br>
+               <label for="col2">Choose a factor:</label>
+               <br><br>
+               <select name="col2" id="col2", name="col2">
+  <option value="Population">Population</option>
+  <option value="Yearly %\nChange">Yearly Change</option>
+  <option value="Migrants (net)">Migrants (net)</option>
+  <option value="Median Age">Median Age</option>
+  <option value="Fertility Rate">Fertility Rate</option>
+  <option value="Density (P/Km²)">Density (P/Km²)</option>
+  <option value="Urban\nPop %">Urban Population</option>
+  <option value="World Population">World Population</option>
+  </select>
+               <br><br>
+               <label for="col3">Choose another factor:</label>
+               <br><br>
+               <select name="col3" id="col3", name="col3">
+  <option value="Population">Population</option>
+  <option value="Yearly\nChange">Yearly\nChange</option>
+  <option value="Migrants (net)">Migrants (net)</option>
+  <option value="Median Age">Median Age</option>
+  <option value="Fertility Rate">Fertility Rate</option>
+  <option value="Density (P/Km²)">Density (P/Km²)</option>
+  <option value="Urban Population">Urban Population</option>
+  <option value="World Population">World Population</option>
+  </select>
+               <br><br>
+               <input type="submit">
+              </form>
+              </section>
+              </center>
+
+                        <div>
+                            <h2 class="fw-bolder-space">Interactive Countries Scatter Plot</h2>
+                            <p class="lead fw-normal text-muted mb-0">Here, you can select two population factors to compare for any of the 25 most populated countries across the years.</p>
+                          
+                        </div>
+                    </div>
+                </div>
+            </section>
+          
+           
+          
+          
+        </main>
+        <!-- Footer-->
+        <footer class="bg-dark-about py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Population Trends 2022</div></div>
+
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{{ url_for('static', filename='scripts.css') }}"></script>
+    </body>
+</html>

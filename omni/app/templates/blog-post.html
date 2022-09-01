@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Population Trends</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+<link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+             <nav class="navbar navbar-expand-lg navbar-dark bg-dark-about">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="index.html">Population Trends</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('blogpost') }}">Background</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About Page</a></li>
+                          <li class="nav-item"><a class="nav-link" href="{{ url_for('visuals') }}">Interactive Visuals</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('machinelearning') }}">Machine Learning</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('faq') }}">FAQ</a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <header class="py-5">
+                <div class="container px-5">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 col-xxl-6">
+                            <div class="text-center my-5">
+                                <h1 class="fw-bolder mb-3">Glossary and Background Information.</h1>
+                                <p class="lead fw-normal text-muted mb-4">Don’t understand what fertility rates or median age are and why they are so important? Continue reading to understand what these terms mean and why they are so important. Below you will find a basic introduction of population and population growth, which is followed by common terms used throughout the website.</p>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <section class="py-5 bg-light" id="scroll-target">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src="{{url_for('static', filename='imgs/Introduction_Image.jpg') }}" alt="..." /></div>
+                        <div class="col-lg-6">
+                            <h2 class="fw-bolder">Introduction</h2>
+                            <p class="lead fw-normal text-muted mb-0">As of now, there are 7.753 billion people in the world. After reaching 2 billion in 1927, population growth has sky rocketed, reaching the next billion in 33 years. There are many factors that affect population growth, including fertility rate, mortality rate, median age, natural resources, economical, political, and cultural beliefs. As of now, the population grows about 83 million per year, yet the factors, individually, show that the growth rate is slowing down. Why is that? Scroll down to learn more.</p>
+                        </div>
+                    </div>
+                </div>
+              
+              </section>
+
+           <section class="py-5" id="features">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">Main Vocabulary</h2></div>
+                      
+                        <div class="col-lg-8">
+                            <div class="row gx-5 row-cols-1 row-cols-md-2">
+                                <div class="col mb-5 h-100">
+                                    <div class="feature bg-primary-test bg-gradient text-brown rounded-3 mb-3"><i class="bi bi-building"></i></div>
+                                    <h2 class="h5">Population Density</h2>
+                                    <p class="mb-0">The total number of individuals of a certain species (humans for this case) in a specific geographical location or land area. It is used to assess relationships with ecosystems, human health, human population growth, infrastructure and much more.</p>
+                                </div>
+                                <div class="col mb-5 h-100">
+                                    <div class="feature bg-primary-test bg-gradient text-brown rounded-3 mb-3"><i class="bi bi-collection"></i></div>
+                                    <h2 class="h5">Fertility Rate</h2>
+                                    <p class="mb-0">The number of children born alive to someone if they were to live to the end of their childbearing years. This is a major factor for determining population growth and population health</p>
+                                </div>
+                                <div class="col mb-5 h-100">
+                                    <div class="feature bg-primary-test bg-gradient text-brown rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
+                                    <h2 class="h5">Median Age</h2>
+                                    <p class="mb-0">The age that divides the population into two parts of equal size (half are younger and the other half are older to this median age). </p>
+                                </div>
+                                <div class="col h-100">
+                                    <div class="feature bg-primary-test bg-gradient text-brown rounded-3 mb-3"><i class="bi bi-building"></i></div>
+                                    <h2 class="h5">Urban Population</h2>
+                                    <p class="mb-0">The amount of people living in an area that is classified as urban. Urban is a term used to describe a human settlement with high infrastructure.</p>
+                                </div>
+                              <div class="col mb-5 h-100">
+                                    <div class="feature bg-primary-test bg-gradient text-brown rounded-3 mb-3"><i class="bi bi-collection"></i></div>
+                                    <h2 class="h5">Net Migrants</h2>
+                                    <p class="mb-0"h>The difference between the number of immigrants and the number of emigrants throughout the year. Immigrants are those who leave an area and emigrants are those who come to an area.</p>
+                                </div>
+                                <div class="col h-100">
+                                    <div class="feature bg-primary-test bg-gradient text-brown rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
+                                    <h2 class="h5">Developing/Developed</h2>
+                                    <p class="mb-0">A developed country is a country that has high quality of life, economy and technological infrastructure. In contrast, a developing country is a country that has a less developed economy, infrastructure, industrialization, and a lower quality of life.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+                      <section class="py-5 bg-light">
+                <div class="container px-5 my-5">
+                    <div class="text-center mb-5">
+                        <h1 class="fw-bolder">More Information for Understanding</h1>
+                        <p class="lead fw-normal text-muted mb-0">Achieve a deeper understanding about Population and Population factors</p>
+                    </div>
+                    <div class="row gx-5">
+                        <div class="col-xl-8">
+                            <!-- FAQ Accordion 1-->
+                          
+                            <h2 class="fw-bolder mb-3">Fertility Rate</h2>
+                            
+                      </div>
+                            <div class="accordion mb-5" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="headingOne"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Factors Affecting Fertility Rate</button></h3>
+                                    <div class="accordion-collapse collapse" id="collapseOne" aria-labelledby="headingOne" data-bs-parent="#accordionExample2">
+                                        <div class="accordion-body">
+                                            <strong>There are many factors that affect fertility rate.</strong>
+                                            The most common factor is the expansion of female rights. More women have access to family planning, as well as higher education and labor market opportunities. This leads to women having less free time to take care of many children. Alongside, as the cost to raise children increases, many families see decreased economical benefit with more children. These factors have influence, but so does the cultural norm in an area. While some places favor bigger families, like Africa, other places have a more occupational culture that does not heavily prioritize child-bearing.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="headingTwooo"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwooo" aria-expanded="false" aria-controls="collapseTwooo">Reasons for Fertility Rate Decrease</button></h3>
+                                    <div class="accordion-collapse collapse" id="collapseTwooo" aria-labelledby="headingTwooo" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <strong>In order for population to be constant, the fertility rate of a country must be equal or greater than the replacement level fertility.</strong>
+                                             As of now, the replacement level is 2.1, yet there are many countries that have fallen below the replacement level. Why is that? As more developing countries are closing the gap between them and developed countries, more opportunities are given to women and female people. This allows them to spend more time either completing higher levels of education or working, which cuts back the time utilized to raise children. Alongside, many cultural/political norms encourage more working or favor smaller families, which influences many families to have fewer children.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="headingThree"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThreee" aria-expanded="false" aria-controls="collapseThreee">Continent-Specific Fertility Rate Factors</button></h3>
+                                    <div class="accordion-collapse collapse" id="collapseThreee" aria-labelledby="headingTree" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <strong><p>Developed Continents have more similar factors that changes their fertility rates in comparison to developing countries</strong>
+                                            In fully developed continents like North America, Europe and Australia, it is common for women and female people to spend more time achieving higher education, which allows them more opportunities in the labor market. Alongside, there are an increase use of contraceptives and family planning and a reform in social religion. Yet some of the major factors also include economical factors. As the economy is overall getting more expensive, it is more expensive to raise many children and maintain a work-life balance.<p>
+                                          <p>For South America, they have increased educational opportunities — expansion of mandatory education — and birth control methods, in comparison to other developing continents. Alongside, the cost of having more children outweighs the benefits as the continent, as a whole, is becoming more industrialized.<p>
+                                          <p>Developing Asian countries are still poorly resourced, which causes fertility rates to remain higher in comparison to developed countries. Furthermore, there is more economical benefit for having more children as children offer free labor. There is also a cultural norm in which women spend more time taking care of homes, which allows more free-time to raise more children, and another norm that encourages children sooner in a women’s childbearing years.<p>
+                                          <p>Developed Asian countries have a cultural norm that is heavily job orientated, which results in less time to raise children. These countries also have an expensive economy and more birth control options. Moreover, different government laws and regulations which have caused the decrease in fertility rate in both developing and developed countries. A prime example is be the One-Child Policy previously adopted by China, which caused a huge drop in their fertility rate.<p>
+                                          <p>In Africa, since the majority of their countries are developing, their fertility rate are decreasing at a much slower rate. The cultural norms are one of the factors contributing to the slow decrease. It is expected to have a large family and more adolescents are bearing children. Additionally, the utilization of modern contraceptives are low. There are also low levels of socioeconomic development.However, with the more recent emphasis on women education, the fertility rates are slowing coming down.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          
+                  
+                            <!-- FAQ Accordion 2-->
+                            <h2 class="fw-bolder mb-3">Population Density &amp; Median Age</h2>
+                            <div class="accordion mb-5 mb-xl-0" id="accordionExample2">
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="headingOnee"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOnee" aria-expanded="false" aria-controls="collapseOnee">General Factors That Affect Population Density</button></h3>
+                                    <div class="accordion-collapse collapse" id="collapseOnee" aria-labelledby="headingOnee" data-bs-parent="#accordionExample2">
+                                        <div class="accordion-body">
+                                            <p><strong>There are two main factors that affect population density: Physical and Human.</strong>
+                                              Physical factors include water supply, climate, relief (shape of land), vegetation of the land, soil, and the availability of natural resources and energy. If there are better natural resources and better living conditions in an area, then the population density in said area will be greater.
+                                          </p>
+<p>Human factors include three sub-categories: Political, Economical, and Cultural. Some of the most common political factors include governmental corruption, political boundaries, political stability, migration and trade control, any civil war or tensions between multiple groups, persecution, and effective public services such as education and health care. Some of the most common socioeconomic factors include the availability of jobs, economic activities (recession/inflation) within a region, market demand, social organization, and technology used. The most significant cultural norm is the prominent religion practiced or any other practice with cultural significance.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="headingTwo"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Fun Facts about Median Age</button></h3>
+                                    <div class="accordion-collapse collapse" id="collapseTwo" aria-labelledby="headingTwo" data-bs-parent="#accordionExample2">
+                                        <div class="accordion-body">
+                                            <p>
+                                              
+                                          <strong>Populations can have an increasing median age due to the declining fertility rates and rising life expectancy.</strong>
+                                            This is first seen throughout all developed countries, but developing countries are gradually displaying this trend. </p>
+                                          <p>Low-income countries have a lower median age, due to having a younger population overall. This leads to higher fertility rates as having a large portion of their populations consist of young children/adolescents means that more adolescents are bearing children.
+                                          </p>
+                                          <p>Median age across all continents are slowly going up as fertility rates are decreasing, some places faster than others due to their classification as developed and developing. 
+                                          </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                       <!-- FAQ Accordion 3-->
+                  <br/>
+
+                        <h2 class="fw-bolder mb-3">Machine Learning Terms</h2>
+                            <div class="accordion mb-5 mb-xl-0"id="accordionExample3">
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="headingOneee"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOneee" aria-expanded="false" aria-controls="collapseOneee">Confidence Interval</button></h3>
+                                    <div class="accordion-collapse collapse" id="collapseOneee" aria-labelledby="headingOneee" data-bs-parent="#accordionExample2">
+                                        <div class="accordion-body">
+                                            <strong>Confidence intervals are a way of expressing the uncertainty of an estimate.</strong>
+                                            Machine learning is a form of Artificial Intelligence (AI), which means that the computer will be using data to arrive at its own conclusions, without being manually influenced. Confidence intervals can be utilized to add a bound/likelihood on a parameter estimate from a sample of independent observations deriving from the parameter. For example, a confidence interval on a population trend can show how correct a machine learning estimate was when it was trained from past trends.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="headingTwoo"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoo" aria-expanded="false" aria-controls="collapseTwoo">Training and Testing a Machine Learning Model</button></h3>
+                                    <div class="accordion-collapse collapse" id="collapseTwoo" aria-labelledby="headingTwoo" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <strong>Train/Test is a method to measure the accuracy of a Machine Learning Model.</strong>
+                                              You essentially split the dataset into two sets: a training and a testing set. You use the train set to train the model and use the test set to evaluate the model's performance and compare it to the actual data values. Typically, 80% of the data is used for train and 20% of the data for testing.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="headingThree"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTree" aria-expanded="false" aria-controls="collapseTree">Common Machine Learning Models</button></h3>
+                                    <div class="accordion-collapse collapse" id="collapseTree" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <strong><p>There are many different forms of machine learning models, but they are classified into two categories: supervised and unsupervised</strong>
+                                            Supervised machine learning relies on labeled input and output training data, while unsupervised learning processes unlabeled or raw data. There are two main categories under supervised machine learning, classification and regression. Classification sorts input into several categories, while regression aims to predict a value. Some common supervised machine learning models are linear, logistic, decision, random forest, naive bayes classifier, support vector machine, k-means clustering, linear discriminant analysis, generative Model, discrimative model, lasso, gaussian, neural network, and much more.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+            </section>
+
+        </main>
+        <!-- Footer-->
+        <footer class="bg-dark-about py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Population Trends 2022</div></div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+    </body>
+</html>

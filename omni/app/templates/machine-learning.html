@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Population Trends</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+             <nav class="navbar navbar-expand-lg navbar-dark bg-dark-about">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="index.html">Population Trends</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('blogpost') }}">Background</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About Page</a></li>
+                          <li class="nav-item"><a class="nav-link" href="{{ url_for('visuals') }}">Interactive Visuals</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('machinelearning') }}">Machine Learning</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('faq') }}">FAQ</a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Header-->
+            <header class="py-5">
+                <div class="container px-5">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 col-xxl-6">
+                            <div class="text-center my-5">
+                                <h1 class="fw-bolder mb-3">Population Machine Learning Models</h1>
+                              <br/>
+                               <h3>
+                                 Objective
+                              </h3> 
+                                <p class="lead fw-normal text-muted mb-4">Throughout the course of our project, our team created and trained several Machine Learning models. We aimed to predict a country’s future population issues (i.e over/under crowding) to identify the timelines of these problems and prepare for them.
+</p>
+                               <h3>
+                                  How?
+                              </h3>
+                              <p class="lead fw-normal text-muted mb-4">We utilized Machine Learning models and the relationships between different population factors (median age, urban population, etc.) to train the models and create accurate predictions.
+</p>
+                                <a class="btn btn-primary-about btn-lg"  href="#scroll-target">View Our Models</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+          
+            
+                      <!-- Machine Section 1b-Gaussian-->
+                     <section class="py-5 bg-light"  id="scroll-target">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 align-items-center">
+                      
+                      <!-- Graph -->
+                      <div>
+                <img class ="graph-image" width = "500" height = "400" title = "ml1" src = "{{url_for('static', filename='imgs/ml1-resize.png') }}" style="border:1px solid green;">
+              </div>
+<br>
+                        <div>
+                            <h2 class="fw-bolder-space">Gaussian Regression Model</h2>
+                            <p class="lead fw-normal text-muted mb-0">We utilized the Gaussian Regression Model since it works well with smaller datasets. The 95% confidence interval displayed on the graph demonstrates how certain the machine learning is of its predictions. </p>
+                          
+                          <ul class="lead fw-normal text-muted mb-0">
+    <li>Standard Deviation: 0.5602876245485191
+    </li>
+    <li>MAE: 0.6599639068564018
+    </li>
+    <li>Score: 0.99
+    </li>
+</ul>
+                          
+                        </div>
+
+                      
+                      
+                    </div>
+                </div>
+            </section>
+          
+          <!-- Machine Section 2b-Lasso-->
+                     <section class="py-5">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 align-items-center">
+                      
+                      <!-- Graph -->
+                      <div class="graph"><iframe 
+                          width = "800" height = "400" title = "ml2" src = "{{ url_for('static', filename='imgs/ml2.html') }}" style="border:1px solid green;">
+                          </iframe></div>
+  <div>
+                            <h2 class="fw-bolder-space">Lasso Regression Model</h2>
+                            <p class="lead fw-normal text-muted mb-0">The Lasso Regression Model is a modification of a Linear Regression Model. Therefore, we chose to use this model due to the strong correlations in our data. This model was able to accurately predict data points, such as future population. </p>
+                          
+                          <ul class="lead fw-normal text-muted mb-0">
+    <li>Standard Deviation: 5.876559420041964
+    </li>
+    <li>MAE: 0.2511903017364201
+    </li>
+    <li>Score: 1.0
+    </li>
+</ul>
+                          
+                        </div>
+                      
+                      
+                    </div>
+                </div>
+            </section>
+
+         
+          <!-- Machine Section 3b: SVR-->
+            <section class="py-5 bg-light">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 align-items-center">
+                       <div class="graph"><iframe 
+                          width = "800" height = "400" title = "ml3" src = "{{ url_for('static', filename='imgs/ml3.html') }}" style="border:1px solid green;">
+                          </iframe></div>
+
+                        <div>
+                            <h2 class="fw-bolder-space">Support Vector Regression (SVR) Model</h2>
+                            <p class="lead fw-normal text-muted mb-0">The SVR works well with smaller datasets, as well as data in a similar range-this means that it worked well with our population data. Not only is the SVR easy to implement, it also is adept at generalizing and making predictions</p>
+                          
+                          <ul class="lead fw-normal text-muted mb-0">
+    <li>Standard Deviation: 5.876559420041964
+    </li>
+    <li>MAE: 3.081251849981352
+    </li>
+    <li>Score: 0.43
+    </li>
+</ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+          
+            <!-- MachineSection 4b: Polynomial Regression Model-->
+            <section class="py-5">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 align-items-center">
+                     
+                      <!-- Placeholder -->
+                      <div>
+                <img class ="graph-image" width = "650" height = "400" title = "ml4" src = "{{ url_for('static', filename='imgs/ml4.png') }}" style="border:1px solid green;">
+              </div>
+
+                        <div>
+                            <h2 class="fw-bolder-space">Polynomial Regression Model</h2>
+                            <p class="lead fw-normal text-muted mb-0">We used a polynomial regression model to predict fertility rate for Africa, since that would not follow a linear path. This model was able to accurately predict future fertility rates for Africa until 2060, though its predictions were less accurate past that point since the function is not a perfect polynomial graph. Other models could more effectively predict further into the future.</p>
+                          
+                        </div>
+                    </div>
+                </div>
+            </section>
+          
+          
+           
+        </main>
+        <!-- Footer-->
+        <footer class="bg-dark-about py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Population Trends 2022</div></div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+    </body>
+</html>

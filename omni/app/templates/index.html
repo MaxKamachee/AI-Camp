@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Population Trends</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column h-100">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark-about">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="index.html">Population Trends</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('blogpost') }}">Background</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About Page</a></li>
+                          <li class="nav-item"><a class="nav-link" href="{{ url_for('visuals') }}">Interactive Visuals</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('machinelearning') }}">Machine Learning</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('faq') }}">FAQ</a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Header-->
+            <header class="bg-dark-about py-5">
+                <div class="container px-5">
+                    <div class="row gx-5 align-items-center justify-content-center">
+                        <div class="col-lg-8 col-xl-7 col-xxl-6">
+                            <div class="my-5 text-center text-xl-start">
+                                <h1 class="display-5 fw-bolder text-white mb-2">Population Trends in Different Continents</h1>
+                                <p class="lead fw-normal text-white mb-4">Making models and predictions of population trends, using machine learning, for the benefit of humankind</p>
+                                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+                                    <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{{ url_for('visuals') }}">Get Started</a>
+                                    <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#scroll-target">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><iframe width="600" height="400" title="Correlation Table of Features" src="{{ url_for('static', filename='imgs/popdens_v_time.html') }}"></iframe></div>
+                    </div>
+                </div>
+            </header>
+            <!-- Features section-->
+            <section class="py-5" id="scroll-target">
+              
+                <div class="container px-5 my-5">
+
+                    <div class="row gx-5 align-items-center">
+                      <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><iframe width="600" height="600" title="Correlation Table of Features" src="{{ url_for('static', filename='imgs/fig6.html') }}"></iframe></div>
+                        <div class="col-lg-6">
+                            <h2 class="fw-bolder">Welcome to Our Website!</h2>
+                            <p class="lead fw-normal text-muted mb-0">Here, we will open your eyes to the driving forces of population, demonstrating their importance to our growth and our future with our scintillating and meaningful visuals. Using machine learning models, we have also provided you with a prediction of the future and enlighten you on the beauty of our population, with the goal of achieving a deeper understanding of the world around us.</p>
+                        </div>
+                    </div>
+                </div>
+              
+              </section>
+            <section class="py-5 bg-light" id="features">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">What Our Website Offers.</h2></div>
+                        <div class="col-lg-8">
+                            <div class="row gx-5 row-cols-1 row-cols-md-2">
+                                <div class="col mb-5 h-100">
+                                    <div class="feature bg-primary-test bg-gradient text-brown rounded-3 mb-3"><i class="bi bi-pie-chart-fill"></i></div>
+                                    <h2 class="h5">Interactive Models and Visuals</h2>
+                                    <p class="mb-0">Play around with our colorful models and input your own variables to see the trends that YOU want to see. </p>
+                                </div>
+                                <div class="col mb-5 h-100">
+                                    <div class="feature bg-primary-test bg-gradient text-brown rounded-3 mb-3"><i class="bi bi-file-bar-graph-fill"></i></div>
+                                    <h2 class="h5">Our Process</h2>
+                                    <p class="mb-0">See how we overcome our troubles and learn why we chose certain models in comparison to others.</p>
+                                </div>
+                                <div class="col mb-5 mb-md-0 h-100">
+                                    <div class="feature bg-primary-test bg-gradient text-brown rounded-3 mb-3"><i class="bi bi-bar-chart"></i></div>
+                                    <h2 class="h5">Information</h2>
+                                    <p class="mb-0">Get a brief exposure to what machine learning is, as well as some fun information about population and population factors.</p>
+                                </div>
+                                <div class="col h-100">
+                                    <div class="feature bg-primary-test bg-gradient text-brown rounded-3 mb-3"><i class="bi bi-people-fill"></i></div>
+                                    <h2 class="h5">About Us</h2>
+                                    <p class="mb-0">See the coders behind the scenes and learn why and how we pursued this project.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Testimonial section-->
+            <div class="py-5">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-10 col-xl-7">
+                            <div class="text-center">
+                                <div class="fs-4 mb-4 fst-italic">"we did code"</div>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <img class="rounded-circle" width = 50px height = 50px src="{{ url_for('static', filename='imgs/Cam.jpg') }}" alt="..." />
+                                    <div class="fw-bold">
+                                          Cam the Data Enjoyer
+                                        <span class="fw-bold text-primary mx-1">/</span>
+                                        Team Mascot
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog preview section-->
+
+            <section class="py-5 bg-light" id="features">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">What Visuals Did We Use</h2></div>
+                        <div class="col-lg-8">
+                            <div class="row gx-5 row-cols-1 row-cols-md-2">
+                                <div class="col mb-5 h-100">
+                                    <div class="feature bg-primary-test bg-gradient text-brown rounded-3 mb-3"><i class="bi bi-bar-chart-line-fill"></i></div>
+                                    <h2 class="h5">Scatter Plots</h2>
+                                    <p class="mb-0">Are used to plot data points on a horizontal and a vertical axis in the attempt to show how much one variable is affected by another. </p>
+                                </div>
+                                <div class="col mb-5 h-100">
+                                    <div class="feature bg-primary-test bg-gradient text-brown rounded-3 mb-3"><i class="bi bi-file-bar-graph"></i></div>
+                                    <h2 class="h5">Line Graphs</h2>
+                                    <p class="mb-0">A typoe\ of a graphical visual that tracks changes over short and long periods of time.</p>
+                                </div>
+                                <div class="col mb-5 mb-md-0 h-100">
+                                    <div class="feature bg-primary-test bg-gradient text-brown rounded-3 mb-3"><i class="bi bi-map"></i></div>
+                                    <h2 class="h5">Heat Map</h2>
+                                    <p class="mb-0">A heat map is a data visualization technique that shows magnitude of a phenomenon as color in two dimensions.</p>
+                                </div>
+                                <div class="col h-100">
+                                    <div class="feature bg-primary-test bg-gradient text-brown rounded-3 mb-3"><i class="bi bi-map-fill"></i></div>
+                                    <h2 class="h5">Choropleth Map</h2>
+                                    <p class="mb-0">A map that uses graded differences in shading of color on a map in order to indicate the average values of some property or quantity in those areas. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+      <section class="py-5" id="features">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">What Models Did We Use</h2></div>
+                        <div class="col-lg-8">
+                            <div class="row gx-5 row-cols-1 row-cols-md-2">
+                                <div class="col mb-5 h-100">
+                                    <div class="feature bg-primary-test bg-gradient text-brown rounded-3 mb-3"><i class="bi bi-bar-chart-line"></i></div>
+                                    <h2 class="h5">Poly Regression</h2>
+                                    <p class="mb-0">A form of regression analysis that uses the relationship between an independent variable and dependent variable and is modeled as a n nth degree polynomial curve </p>
+                                </div>
+                                <div class="col mb-5 h-100">
+                                    <div class="feature bg-primary-test bg-gradient text-brown rounded-3 mb-3"><i class="bi bi-file-bar-graph-fill"></i></div>
+                                    <h2 class="h5">Support Vector Regression</h2>
+                                    <p class="mb-0">A type of supervised learning algorithm that is used to predict discrete values and create a best fit line.</p>
+                                </div>
+                                <div class="col mb-5 mb-md-0 h-100">
+                                    <div class="feature bg-primary-test bg-gradient text-brown rounded-3 mb-3"><i class="bi bi-bar-chart"></i></div>
+                                    <h2 class="h5">Gaussian</h2>
+                                    <p class="mb-0">A classification machine learning algorithm that is used to classify data into different categories based on the probability distribution.</p>
+                                </div>
+                                <div class="col h-100">
+                                    <div class="feature bg-primary-test bg-gradient text-brown rounded-3 mb-3"><i class="bi bi-bar-chart-fill"></i></div>
+                                    <h2 class="h5">Lasso</h2>
+                                    <p class="mb-0">LASSO (Least absolute shrinkage and selection operator) is a regression method that performs both variable selections and regularization to enhance the prediction accuracy and interpretability of the results. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <!-- Footer-->
+        <footer class="bg-dark-about py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Population Trends 2022</div></div>
+
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+      </main>
+    </body>
+</html>
